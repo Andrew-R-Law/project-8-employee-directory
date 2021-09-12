@@ -1,7 +1,8 @@
 const employeeList = document.getElementById('employee-list');
 const employees = [];
 const overlay = document.getElementById('overlay');
-
+const closeBtn = document.getElementById('close-btn');
+const wrapper = document.getElementById('wrapper');
 
 
 
@@ -32,7 +33,10 @@ gatherEmployees();
 
 employeeList.addEventListener('click', (e) => {
     if (e.target !== employeeList) {
+        employeeList.className = 'darken';
         overlay.className='';
+        const overlayHTML = document.getElementById('overlayHTML');
+        overlayHTML.innerHTML = '';
         const employee = e.target.closest('.employee');
         const employeeIndex = employee.value;
         const picture = employees[employeeIndex].picture.large;
@@ -48,8 +52,7 @@ employeeList.addEventListener('click', (e) => {
         const bdayRaw = employees[employeeIndex].dob.date.substring(0, 10);
         const bdayNumbers = bdayRaw.replace(/\D/g, "");
         const bday = `Birthday: ${bdayNumbers.substring(6, 8)}/${bdayNumbers.substring(4, 6)}/${bdayNumbers.substring(0,4)}`;
-        overlay.insertAdjacentHTML('beforeend', `
-            <button id="close-btn">X</button>
+        overlayHTML.insertAdjacentHTML('beforeend', `
             <img class="avatar" src="${picture}" alt="Profile Picture">
             <div class="overlay-details">
                 <h3>${name}</h3>
@@ -64,6 +67,14 @@ employeeList.addEventListener('click', (e) => {
         `);
     }
 });
+
+closeBtn.addEventListener('click', e => {
+    if (e.target === closeBtn) {
+        overlay.className = 'hidden';
+        employeeList.className = '';
+    }
+});
+
 
 
 
