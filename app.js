@@ -33,8 +33,8 @@ gatherEmployees();
 
 employeeList.addEventListener('click', (e) => {
     if (e.target !== employeeList) {
-        employeeList.className = 'darken';
-        overlay.className='';
+        wrapper.className = 'grayed-out';
+        overlay.className = '';
         const overlayHTML = document.getElementById('overlayHTML');
         overlayHTML.innerHTML = '';
         const employee = e.target.closest('.employee');
@@ -70,6 +70,7 @@ employeeList.addEventListener('click', (e) => {
 
 closeBtn.addEventListener('click', e => {
     if (e.target === closeBtn) {
+        wrapper.className = '';
         overlay.className = 'hidden';
         employeeList.className = '';
     }
