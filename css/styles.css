@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
 h1 {
     color: rgb(65, 64, 64);
     text-transform: uppercase;
@@ -25,11 +30,11 @@ ul {
 li {
     padding: 5px;
     display: flex;
-    flex: 1 1 0px;
+    flex: 1 0 30%;
     background-color: whitesmoke;
     border:solid rgb(189, 189, 189) 2px;
-    margin: 10px 10px;
-    
+    margin: 10px 10px; 
+    max-width: 600px; 
 }
 
 .avatar {
@@ -70,6 +75,10 @@ li {
     background-color: whitesmoke;
 }
 
+#search {
+    margin-top: 18px;
+    margin-right: 52px;
+}
 
 #overlay {
     font-family: 'Nunito', sans-serif;
@@ -85,7 +94,7 @@ li {
     background-color: whitesmoke;
 }
 
-#overlay button{
+#close-btn{
     position: absolute;
     top: 5px;
     right: 5px;
@@ -93,11 +102,24 @@ li {
     color: whitesmoke;
     border-radius: 20%;
 }
+
+#previous {
+    position: absolute;
+    top: 200px;
+    left: 5px;
+}
+
+#next {
+    position: absolute;
+    top: 200px;
+    right: 5px;
+}
 #overlay img {
     padding-top: 10px;
 }
 
 #wrapper {
+    min-height: 100vh;
     margin: -13px 0 0 0;
     padding-bottom: 55px;
     background: rgba(231, 231, 231);
