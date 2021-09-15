@@ -7,7 +7,8 @@ const closeBtn = document.getElementById('close-btn');
 const wrapper = document.getElementById('wrapper');
 
 
-//Function for fetching employees and displaying relevant information them to the main page
+//Function for fetching employees, pushing those employees to the 'employees' array,
+// and displaying relevant information of each employee the to the main page.
 
 function gatherEmployees (url) {
     fetch(url)
@@ -65,7 +66,7 @@ function parseBday (employeeIndex){
     return bday;
 }
 
-//(4) Gathers employee information for the modal display and returns that HTML with that information.
+//(4) Gathers employee information for the modal display and returns HTML with that information.
 
 function gatherEmployeeInfo (employee) {
     const employeeIndex = employee.value;
