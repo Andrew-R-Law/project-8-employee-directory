@@ -41,7 +41,7 @@ function displayEmployees (arr) {
 
 //Calls the gatherEmployees function.
 
-gatherEmployees('https://randomuser.me/api/?results=12');
+gatherEmployees('https://randomuser.me/api/?nat=us&results=12');
 
 
 /****

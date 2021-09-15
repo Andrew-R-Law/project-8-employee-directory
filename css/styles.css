@@ -1,3 +1,4 @@
+
 *{
     box-sizing: border-box;
 }
@@ -6,6 +7,7 @@ header {
     display: flex;
     justify-content: space-between;
 }
+
 
 h1 {
     color: rgb(65, 64, 64);
@@ -20,6 +22,7 @@ h3 {
 }
 
 ul {
+    width: fit-content;
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
@@ -28,18 +31,25 @@ ul {
     justify-content: space-between;
 }
 li {
+    font-size: small;
     padding: 5px;
     display: flex;
-    flex: 1 0 30%;
+    flex: 1 0 50%;
     background-color: whitesmoke;
     border:solid rgb(189, 189, 189) 2px;
-    margin: 10px 10px; 
+    margin: 10px 10px;
     max-width: 600px; 
 }
 
+.employee-details {
+    display: flex;
+    flex-direction: column;
+}
+
 .avatar {
+    width: 25%;
     border-radius: 50%;
-    padding: 5px 10px;
+    margin-right: 5px;
 }
 .email,
 .location {
@@ -76,8 +86,9 @@ li {
 }
 
 #search {
-    margin-top: 18px;
+    margin-top: 50px;
     margin-right: 52px;
+    width: 35%;
 }
 
 #overlay {
@@ -89,7 +100,7 @@ li {
     bottom: auto;
     margin: auto;
     padding-bottom: 50px;
-    width: 400px;
+    width: 95%;
     text-align: center;
     background-color: whitesmoke;
 }
@@ -105,13 +116,13 @@ li {
 
 #previous {
     position: absolute;
-    top: 200px;
+    top: 150px;
     left: 5px;
 }
 
 #next {
     position: absolute;
-    top: 200px;
+    top: 150px;
     right: 5px;
 }
 #overlay img {
@@ -126,3 +137,143 @@ li {
     font-family: 'Nunito', sans-serif;
 }
 
+@media (min-width: 720px) {
+    *{
+        box-sizing: border-box;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    
+    h1 {
+        color: rgb(65, 64, 64);
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        padding-top: 18px;
+        padding-left: 52px;
+    }
+    
+    h3 {
+        margin-bottom: 5px;
+    }
+    
+    ul {
+        width: fit-content;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        padding-right: 40px;
+        justify-content: space-between;
+    }
+    li {
+        font-size: medium;
+        padding: 5px;
+        display: flex;
+        flex: 1 0 30%;
+        background-color: whitesmoke;
+        border:solid rgb(189, 189, 189) 2px;
+        margin: 10px 10px; 
+        max-width: 600px; 
+    }
+    
+    .employee-details {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .avatar {
+        width:min-content;
+        padding: 5px 10px;
+        border-radius: 50%;
+        padding: 5px 10px;
+    }
+    .email,
+    .location {
+        color:rgb(136, 136, 136);
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .overlay-background {
+        background-color: grey;
+    }
+    
+    .overlay-details{
+        margin: auto;
+        width: 80%;
+        border-bottom: solid lightgrey 2px;
+    }
+    
+    .extra-details{
+        color:rgb(136, 136, 136);
+    }
+    
+    .grayed-out {
+        filter: brightness(50%);
+        background:rgba(65, 64, 64, .8)
+     }
+    
+    .displayed {
+        all: revert;
+        filter: brightness(100%);
+        background-color: whitesmoke;
+    }
+    
+    #search {
+        margin-top: 18px;
+        margin-right: 52px;
+        width: min-content;
+    }
+    
+    #overlay {
+        font-family: 'Nunito', sans-serif;
+        position: fixed;
+        top: 10%;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        margin: auto;
+        padding-bottom: 50px;
+        width: 400px;
+        text-align: center;
+        background-color: whitesmoke;
+    }
+    
+    #close-btn{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-color: rgb(36, 34, 34);
+        color: whitesmoke;
+        border-radius: 20%;
+    }
+    
+    #previous {
+        position: absolute;
+        top: 200px;
+        left: 5px;
+    }
+    
+    #next {
+        position: absolute;
+        top: 200px;
+        right: 5px;
+    }
+    #overlay img {
+        padding-top: 10px;
+    }
+    
+    #wrapper {
+        min-height: 100vh;
+        margin: -13px 0 0 0;
+        padding-bottom: 55px;
+        background: rgba(231, 231, 231);
+        font-family: 'Nunito', sans-serif;
+    }
+}
